@@ -31,9 +31,10 @@ def ask_gemini(api_key, prompt_text):
     try:
         # Configure the specific key for this request
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-pro')
+        # UPDATED MODEL: gemini-pro is old/deprecated. Using gemini-1.5-flash (Faster & Free)
+        model = genai.GenerativeModel('gemini-1.5-flash') 
         response = model.generate_content(prompt_text)
-        time.sleep(1.5) # Pause to be kind to the free API
+        time.sleep(2) # Increased delay slightly to avoid rate limits
         return response.text.strip()
     except Exception as e:
         print(f"⚠️ AI Error: {e}")
@@ -49,7 +50,6 @@ def main():
         db = []
 
     # Map existing teams for quick lookup
-    # Structure: {'TeamName': {Object}}
     existing_teams = {item['Team']: item for item in db}
     
     # 2. Fetch External Data
@@ -65,17 +65,20 @@ def main():
     changes_made = False
 
     # 3. Process Teams (Extract from Team A and Team B)
-    # We use a set to avoid processing the same team twice in one run
     teams_to_process = []
     
     for match in matches:
-        # Get Sport (Important for context)
-        sport = match.get('sport', 'unknown')
+        # SAFE GUARD: Ensure values are strings, fallback to "Unknown" if None
+        sport = match.get('sport') or "Unknown Sport"
+        team_a = match.get('team_a') or "Unknown Team"
+        team_b = match.get('team_b') or "Unknown Team"
+
+        # Skip if name is completely invalid
+        if team_a != "Unknown Team":
+            teams_to_process.append({'name': team_a, 'sport': sport})
         
-        # Add Team A
-        teams_to_process.append({'name': match['team_a'], 'sport': sport})
-        # Add Team B
-        teams_to_process.append({'name': match['team_b'], 'sport': sport})
+        if team_b != "Unknown Team":
+            teams_to_process.append({'name': team_b, 'sport': sport})
 
     # 4. AI EXTRACTION LOOP (Using Extraction Key)
     for t in teams_to_process:
@@ -85,32 +88,45 @@ def main():
         if name not in existing_teams:
             print(f"🆕 New Team found: {name} ({sport})")
             
-            # Prepare Prompt
-            prompt = PROMPT_EXTRACT.replace("{team}", name).replace("{sport}", sport)
+            # PREVENT CRASH: Ensure prompt replacement handles strings
+            if not PROMPT_EXTRACT:
+                print("❌ Extraction Prompt missing in settings.json")
+                continue
+
+            prompt = PROMPT_EXTRACT.replace("{team}", str(name)).replace("{sport}", str(sport))
             
             # Call AI #1
             league_guess = ask_gemini(KEY_EXTRACT, prompt)
             
+            # Don't save if AI errored out completely
+            if league_guess == "Error":
+                continue
+
             new_entry = {
                 "Team": name,
                 "League": league_guess,
-                "Sport": sport, # Saving sport helps verification later
+                "Sport": sport,
                 "Verified": False
             }
             
             db.append(new_entry)
-            existing_teams[name] = new_entry # Add to temp lookup to avoid duplicates in same run
+            existing_teams[name] = new_entry 
             changes_made = True
 
     # 5. AI VERIFICATION LOOP (Using Verification Key)
     if ENABLE_VERIFY:
         for entry in db:
-            # Check if needs verification AND has a valid key
             if not entry.get("Verified", False) and KEY_VERIFY:
                 print(f"🕵️ Verifying: {entry['Team']} -> {entry['League']}")
                 
-                sport = entry.get('Sport', 'Sports')
-                prompt = PROMPT_VERIFY.replace("{team}", entry['Team']).replace("{league}", entry['League']).replace("{sport}", sport)
+                # SAFE GUARD for Prompt Replacement
+                sport = entry.get('Sport') or "Sports"
+                team_name = entry.get('Team') or "Unknown"
+                current_league = entry.get('League') or "Unknown"
+
+                prompt = PROMPT_VERIFY.replace("{team}", str(team_name))\
+                                      .replace("{league}", str(current_league))\
+                                      .replace("{sport}", str(sport))
                 
                 # Call AI #2
                 decision = ask_gemini(KEY_VERIFY, prompt)
