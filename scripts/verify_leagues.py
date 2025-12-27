@@ -10,6 +10,19 @@ SETTINGS_FILE = 'settings.json'
 BATCH_SIZE = 30
 SLEEP_TIME = 5
 
+def get_best_model(client):
+    try:
+        all_models = list(client.models.list())
+        priorities = ['gemini-1.5-flash', 'gemini-1.5-flash-001', 'gemini-1.5-flash-002', 'gemini-2.0-flash-exp']
+        available_names = [m.name.replace('models/', '') for m in all_models]
+        for p in priorities:
+            if p in available_names: return p
+        for name in available_names:
+            if 'gemini' in name: return name
+        return 'gemini-1.5-flash'
+    except:
+        return 'gemini-1.5-flash'
+
 def main():
     print("--- [Phase 3] Starting AI Verification ---")
 
@@ -31,6 +44,10 @@ def main():
     prompt_template = settings.get("verification_prompt", "")
     client = genai.Client(api_key=api_key)
     
+    # AUTO-DETECT MODEL
+    model_name = get_best_model(client)
+    print(f" > Using AI Model: {model_name}")
+    
     # 2. Filter Targets
     targets = [t for t in db if t.get('League')]
     print(f" > Verifying {len(targets)} teams in batches of {BATCH_SIZE}...")
@@ -47,9 +64,8 @@ def main():
         try:
             prompt = prompt_template.replace("{batch_data}", json.dumps(mini_payload))
             
-            # UPDATED MODEL NAME: 'gemini-1.5-flash-001'
             response = client.models.generate_content(
-                model='gemini-1.5-flash-001',
+                model=model_name,
                 contents=prompt
             )
             
