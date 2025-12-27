@@ -1,0 +1,7 @@
+{
+    "extraction_key": "",
+    "verification_key": "",
+    "extraction_prompt": "I have a sports team named '{team}' playing the sport '{sport}'. Which specific league do they play in? Return ONLY the league name (e.g., 'NBA', 'Premier League', 'IPL'). If unsure, say 'Unknown'.",
+    "verification_prompt": "I have a team named '{team}' and an AI predicted they play in '{league}'. The sport is '{sport}'. Is this correct? Reply 'CORRECT' if yes. If no, reply with the ACTUAL league name only.",
+    "enable_verification": true
+}
