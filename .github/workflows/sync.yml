@@ -18,10 +18,11 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11' # UPDATED to 3.11
+          python-version: '3.11'
 
       - name: Install Libraries
-        run: pip install requests google-generativeai
+        # UPDATED LIBRARY HERE
+        run: pip install requests google-genai
 
       - name: Run AI Processor
         run: python main.py
