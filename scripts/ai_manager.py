@@ -15,7 +15,7 @@ SLEEP_TIME = 5        # 5s delay to satisfy Free Tier limits
 # Paths
 SETTINGS_FILE = 'settings.json'
 DB_FILE = 'db.json'
-BACKEND_URL = "https://vercelapi-olive.vercel.app/api/sync-nodes"
+BACKEND_URL = "https://vercelapi-olive.vercel.app/api/sync-nodes?country=us"
 
 # SPOOF HEADERS (Fixes Phase 1 Stuck Issue)
 FAKE_HEADERS = {
