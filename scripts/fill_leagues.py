@@ -8,25 +8,58 @@ from google.genai import types
 # CONFIG
 DB_FILE = 'db.json'
 SETTINGS_FILE = 'settings.json'
-BATCH_SIZE = 5        # Reduced to 5 for maximum safety
-TOTAL_LIMIT = 50      # Process max 50 teams per run
-SLEEP_TIME = 20       # 20s delay between successful batches
+BATCH_SIZE = 5        # Safe Batch Size
+TOTAL_LIMIT = 50      # Max teams to fill
+SLEEP_TIME = 20       # Delay between batches
 
 def get_text(response):
-    """Safely extracts text from the new Google GenAI response object"""
     try:
-        # The new SDK structure is nested
         if response.candidates and response.candidates[0].content.parts:
             return response.candidates[0].content.parts[0].text.strip()
-    except Exception:
-        pass
+    except: pass
     return ""
 
 def clean_json(text):
     if not text: return ""
-    # Remove markdown code blocks
     text = re.sub(r"^```json|^```|```$", "", text, flags=re.MULTILINE).strip()
     return text
+
+def find_working_model(client):
+    """
+    Tests multiple model names to find one that works for this API Key.
+    """
+    print(" > 🔍 Hunting for a working model...")
+    # List of models to try (Stable -> Specific -> Pro -> Experimental)
+    candidates = [
+        'gemini-1.5-flash',
+        'gemini-1.5-flash-001',
+        'gemini-1.5-flash-002',
+        'gemini-1.5-flash-8b',
+        'gemini-1.5-pro',
+        'gemini-1.0-pro'
+    ]
+    
+    for model in candidates:
+        try:
+            # Try a 1-token ping
+            response = client.models.generate_content(
+                model=model,
+                contents="Hi"
+            )
+            if response and get_text(response):
+                print(f"   ✅ Found working model: {model}")
+                return model
+        except Exception as e:
+            error = str(e)
+            if "429" in error:
+                print(f"   ❌ {model}: Quota Exceeded (Skipping)")
+            elif "404" in error:
+                print(f"   ❌ {model}: Not Found (Skipping)")
+            else:
+                print(f"   ❌ {model}: Error ({error[:50]}...)")
+    
+    print("   ⚠️ No working models found. Defaulting to gemini-1.5-flash")
+    return 'gemini-1.5-flash'
 
 def main():
     print(f"--- [Phase 2] Starting AI Filling (Batch Size: {BATCH_SIZE}) ---")
@@ -41,10 +74,11 @@ def main():
         with open(SETTINGS_FILE, 'r') as f: settings = json.load(f)
     except: return
 
-    # FORCE STABLE MODEL
-    model_name = "gemini-1.5-flash"
+    # Initialize Client
     client = genai.Client(api_key=api_key)
-    print(f" > Using Model: {model_name}")
+    
+    # HUNT FOR MODEL
+    model_name = find_working_model(client)
     
     prompt_template = settings.get("extraction_prompt", "")
 
@@ -64,7 +98,7 @@ def main():
         
         # RETRY LOGIC (Exponential Backoff)
         max_retries = 3
-        retry_delay = 60 # Start with 60s wait
+        retry_delay = 30
         success = False
         
         for attempt in range(max_retries):
@@ -76,14 +110,10 @@ def main():
                     contents=prompt
                 )
                 
-                # SAFE TEXT EXTRACTION
                 raw_text = clean_json(get_text(response))
-                if not raw_text:
-                    raise ValueError("Empty response from AI")
+                if not raw_text: raise ValueError("Empty response")
 
                 results = json.loads(raw_text)
-                
-                # Handle single object vs list
                 if isinstance(results, dict): results = [results]
                 
                 batch_map = {t['Team']: t for t in batch}
@@ -92,7 +122,6 @@ def main():
                     team_name = res.get('Team')
                     league = res.get('League')
                     
-                    # Normalize and Check
                     if team_name in batch_map and league:
                         clean_league = str(league).strip()
                         if clean_league.lower() != "unknown" and clean_league != "":
@@ -102,27 +131,28 @@ def main():
                 
                 print(f"     ✅ Success.")
                 success = True
-                break # Exit retry loop
+                break
 
             except Exception as e:
                 error_str = str(e)
-                print(f"     ⚠️ Attempt {attempt+1} Failed: {error_str[:100]}...")
+                print(f"     ⚠️ Attempt {attempt+1} Failed.")
                 if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str:
                     print(f"        ⏳ Quota hit. Waiting {retry_delay}s...")
                     time.sleep(retry_delay)
-                    retry_delay *= 2 # Double wait time next time (60 -> 120 -> 240)
+                    retry_delay *= 2 
+                elif "404" in error_str:
+                     print("        [!] Model 404'd mid-run. Aborting batch.")
+                     break
                 else:
-                    break # Don't retry logic errors
+                    print(f"        [!] Error: {error_str[:100]}")
+                    break
 
-        # If we failed all retries, stop the whole script to save logs
         if not success:
-            print("     [!] Failed all retries. Stopping Phase 2.")
+            print("     [!] Failed batch. Stopping Phase 2.")
             break
 
-        # Normal Sleep between successful batches
         time.sleep(SLEEP_TIME)
 
-    # 3. Save
     if changes:
         with open(DB_FILE, 'w') as f: json.dump(db, f, indent=4)
         print("--- Phase 2 Complete. Database Updated. ---")
