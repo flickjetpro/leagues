@@ -26,6 +26,8 @@ def main():
         return
 
     prompt_template = settings.get("extraction_prompt", "")
+    
+    # Initialize Client
     client = genai.Client(api_key=api_key)
 
     # 2. Identify Targets
@@ -47,8 +49,9 @@ def main():
         try:
             prompt = prompt_template.replace("{team}", str(team_name)).replace("{sport}", str(sport))
             
+            # UPDATED MODEL NAME: Using specific version 'gemini-1.5-flash-001' to fix 404 error
             response = client.models.generate_content(
-                model='gemini-1.5-flash',
+                model='gemini-1.5-flash-001',
                 contents=prompt
             )
             
@@ -59,10 +62,11 @@ def main():
                 t['Status'] = "AI_Filled"
                 changes = True
                 count += 1
+                print(f"     ✅ Result: {result}")
             else:
                 print("     [-] AI returned unclear response.")
 
-            time.sleep(SLEEP_TIME) # Rate Limit Protection
+            time.sleep(SLEEP_TIME)
 
         except Exception as e:
             print(f"     [!] AI Error: {e}")
