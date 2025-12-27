@@ -10,22 +10,18 @@ SETTINGS_FILE = 'settings.json'
 CURSOR_FILE = 'scripts/verification_cursor.txt'
 BATCH_SIZE = 50       
 BATCHES_PER_RUN = 5   
-SLEEP_TIME = 8        
+SLEEP_TIME = 15       # Increased safety delay
 
-def get_best_model(client):
+def get_text(response):
     try:
-        all_models = list(client.models.list())
-        # PRIORITY: STABLE FIRST
-        priorities = ['gemini-1.5-flash', 'gemini-1.5-flash-001', 'gemini-1.5-flash-002', 'gemini-1.5-pro']
-        available_names = [m.name.replace('models/', '') for m in all_models]
-        for p in priorities:
-            if p in available_names: return p
-        return 'gemini-1.5-flash'
-    except: return 'gemini-1.5-flash'
+        if response.candidates and response.candidates[0].content.parts:
+            return response.candidates[0].content.parts[0].text.strip()
+    except: pass
+    return ""
 
 def clean_json(text):
-    if "```" in text:
-        text = re.sub(r"^```json|^```|```$", "", text, flags=re.MULTILINE).strip()
+    if not text: return ""
+    text = re.sub(r"^```json|^```|```$", "", text, flags=re.MULTILINE).strip()
     return text
 
 def main():
@@ -49,8 +45,9 @@ def main():
     if start_index >= len(db): start_index = 0
     print(f" > Cursor Position: {start_index} / {len(db)}")
 
+    # FORCE STABLE MODEL
+    model_name = "gemini-1.5-flash"
     client = genai.Client(api_key=api_key)
-    model_name = get_best_model(client)
     print(f" > Using Model: {model_name}")
     
     prompt_template = settings.get("verification_prompt", "")
@@ -68,7 +65,7 @@ def main():
         valid_payload = [
             {"Team": t['Team'], "League": t['League'], "Sport": t['Sport']} 
             for t in raw_batch 
-            if t.get('League') and t.get('League') != "Unknown"
+            if t.get('League') and str(t.get('League')).lower() != "unknown"
         ]
 
         print(f"   Batch {i+1}: Checking {len(valid_payload)} teams...")
@@ -82,23 +79,28 @@ def main():
                     contents=prompt
                 )
                 
-                raw_text = clean_json(response.text.strip())
-                corrections = json.loads(raw_text)
-                
-                if corrections:
-                    team_map = {t['Team']: t for t in db}
-                    for fix in corrections:
-                        t_name = fix.get("Team")
-                        correct_league = fix.get("League")
-                        if t_name in team_map:
-                            rec = team_map[t_name]
-                            if rec['League'] != correct_league:
-                                print(f"     ⚠️ Correction: {t_name} -> {correct_league}")
-                                rec['League'] = correct_league
-                                rec['Status'] = "Modified"
-                                changes = True
+                raw_text = clean_json(get_text(response))
+                if raw_text:
+                    corrections = json.loads(raw_text)
+                    if isinstance(corrections, dict): corrections = [corrections]
+                    
+                    if corrections:
+                        team_map = {t['Team']: t for t in db}
+                        for fix in corrections:
+                            t_name = fix.get("Team")
+                            correct_league = fix.get("League")
+                            if t_name in team_map:
+                                rec = team_map[t_name]
+                                if rec['League'] != correct_league:
+                                    print(f"     ⚠️ Correction: {t_name} -> {correct_league}")
+                                    rec['League'] = correct_league
+                                    rec['Status'] = "Modified"
+                                    changes = True
             except Exception as e:
-                print(f"     [!] Batch Failed: {e}")
+                print(f"     [!] Batch Failed: {str(e)[:100]}")
+                if "429" in str(e):
+                    print("     ⏳ Quota hit. Sleeping 60s...")
+                    time.sleep(60)
         
         current_index += len(raw_batch)
         if current_index >= len(db): current_index = 0
