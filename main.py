@@ -7,7 +7,7 @@ import re
 # --- CONFIGURATION ---
 FILL_LIMIT = 50       # How many blank teams to fill per hour (AI #1)
 BATCH_SIZE = 30       # How many teams to verify at once (AI #2)
-SLEEP_TIME = 2        # Delay to respect free tier limits
+SLEEP_TIME = 5        # Delay to respect free tier limits
 
 # --- LOAD SETTINGS ---
 try:
@@ -176,3 +176,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
