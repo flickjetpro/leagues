@@ -2602,5 +2602,17 @@
         "Sport": "fighting",
         "League": "",
         "Status": "Pending"
+    },
+    {
+        "Team": "Goal Rush",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "AEW Worlds End",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
     }
 ]
