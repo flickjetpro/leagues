@@ -1,1 +1,2552 @@
-[]
+[
+    {
+        "Team": "Australia",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "England",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Minnesota Golden Gophers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "New Mexico Lobos",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Atlanta Hawks",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Miami Heat",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "A-League Women: Central Coast Mariners W",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Melbourne Victory W",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Utah Jazz",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Detroit Pistons",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Portland Trail Blazers",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Los Angeles Clippers",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Indiana Pacers",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Boston Celtics",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Central Stags",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Wellington Firebirds",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "UTSA Roadrunners",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Florida International Panthers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Memphis Grizzlies",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Milwaukee Bucks",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Chicago Bulls",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Philadelphia 76ers",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "A-League Women: Adelaide United W",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Western Sydney Wanderers W",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Battle of the Sexes: Sabalenka",
+        "Sport": "tennis",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Kyrgios",
+        "Sport": "tennis",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "GOLF: New York Golf",
+        "Sport": "golf",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Atlanta Drive GC",
+        "Sport": "golf",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cambodia tour of Indonesia: Indonesia",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cambodia",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "A-League Women: Newcastle Jets W",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Canberra United W",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Brisbane Bandits",
+        "Sport": "baseball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Sydney Blue Sox",
+        "Sport": "baseball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Brisbane Heat",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Adelaide Strikers",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Adelaide Giants",
+        "Sport": "baseball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Perth Heat",
+        "Sport": "baseball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Adelaide United",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Western Sydney Wanderers",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Ring V: Night of the Samurai: Inoue",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Picasso",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Naoya Inoue",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "David Picasso",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Pool Taom Pro Cup \ud83c\udfb1",
+        "Sport": "other",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Pretoria Capitals",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Joburg Super Kings",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Spezia",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Pescara",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Parma",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Fiorentina",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "World Darts Championship",
+        "Sport": "darts",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Hibernian",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Heart of Midlothian",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Nottingham Forest",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Manchester City",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Benin",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Botswana",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "World Championships: Day Fourteen",
+        "Sport": "darts",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Catanzaro",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cesena",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Venezia",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Virtus Entella",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Carrarese",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Mantova",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Lecce",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Como",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Sampdoria",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Reggiana",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Torino",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cagliari",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Dubai Capitals",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "MI Emirates",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Al-Nassr",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Al-Okhdood",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Burnley",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Everton",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Arsenal",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Brighton and Hove Albion",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Liverpool",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Wolverhampton Wanderers",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Bristol Bears",
+        "Sport": "rugby",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Newcastle Red Bulls",
+        "Sport": "rugby",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Livingston",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Celtic",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Brentford",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Bournemouth",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Senegal",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "DR Congo",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "PREM Rugby: Bristol Bears",
+        "Sport": "rugby",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Newcastle Falcons",
+        "Sport": "rugby",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Africa Cup of Nations: Senegal",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Congo DR",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Premier League: Liverpool",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Wolves",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "West Ham United",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Fulham",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Gloucester",
+        "Sport": "rugby",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Saracens",
+        "Sport": "rugby",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Paarl Royals",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Sunrisers Eastern Cape",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "East Carolina",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Pittsburgh",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Palermo",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Padova",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Udinese",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Lazio",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Clemson",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Penn State",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Chelsea",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Aston Villa",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Bath Rugby",
+        "Sport": "rugby",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Northampton Saints",
+        "Sport": "rugby",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Al-Ittihad",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Al-Shabab",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Uganda",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Tanzania",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Premiership: Aberdeen",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Dundee Utd",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Famalicao",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Estrela Amadora",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Slovakia U20",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Germany U20",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Army Knights",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Connecticut Huskies",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Bari",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Avellino",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Slovakia",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Germany",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Army",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "UConn",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Leicester Riders",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "London Lions",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Pisa",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Juventus",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Nigeria",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Tunisia",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Latvia U20",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Canada U20",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Estoril Praia",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Alverca",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "BYU",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Georgia Tech",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Latvia",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Canada",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Fresno State",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Miami (OH)",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Los Angeles Chargers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Houston Texans",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "USA U20",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Switzerland U20",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Sacramento Kings",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Dallas Mavericks",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "San Diego State",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "North Texas",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "United States",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Switzerland",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "New York Islanders",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "New York Rangers",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "England tour of Australia: Australia",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Winnipeg Jets",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Minnesota Wild",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "New Jersey Devils",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Washington Capitals",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Carolina Hurricanes",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Detroit Red Wings",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Toronto Maple Leafs",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Ottawa Senators",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Florida Panthers",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Tampa Bay Lightning",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Buffalo Sabres",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Boston Bruins",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Orlando Magic",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Denver Nuggets",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "New Orleans Pelicans",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Phoenix Suns",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Missouri",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Virginia",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "AEW: Saturday Night Collision",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "St. Louis Blues",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Nashville Predators",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Dallas Stars",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Chicago Blackhawks",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Minnesota Timberwolves",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Brooklyn Nets",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "New York Knicks",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "San Antonio Spurs",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Houston Rockets",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cleveland Cavaliers",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Green Bay Packers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Baltimore Ravens",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Denmark U20",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Czech Republic U20",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Denmark",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Czech Republic",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "MMA: FURY PRO GRAPPLING 16",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Los Angeles Kings",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Anaheim Ducks",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Houston",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "LSU",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Winter Cup: Final (W)",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Vancouver Canucks",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "San Jose Sharks",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Calgary Flames",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Edmonton Oilers",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Vegas Golden Knights",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Colorado Avalanche",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Otago Volts",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Canterbury Kings",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "A-League Women: Melbourne City W",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Perth Glory W",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cambodia tour of Indonesia: Cambodia",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Indonesia",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Melbourne City",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Perth Glory",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Melbourne Stars",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Sydney Thunder",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Segunda Liga: Academico Viseu",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Benfica B",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "AC Milan",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Hellas Verona",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "World Championships: Day Fifteen",
+        "Sport": "darts",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Gabon",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Mozambique",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Eisbaren Berlin",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Nurnberg Ice Tigers",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Dresdner Eislowen",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "EHC Red Bull M\u00fcnchen",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Segunda Liga: Pacos Ferreira",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Farense",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Sunderland",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Leeds United",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cremonese",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Napoli",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Gulf Giants",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Abu Dhabi Knight Riders",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Equatorial Guinea",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Sudan",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Exeter Chiefs",
+        "Sport": "rugby",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Leicester Tigers",
+        "Sport": "rugby",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Bristol Flyers",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Surrey 89ers",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Bremerhaven",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Frankfurt Lowen",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Kolner",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Schwenninger",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Primeira Liga: Casa Pia",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Guimaraes",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Arouca",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Gil Vicente",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Straubing Tigers",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Iserlohn Roosters",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "ERC Ingolstadt",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Grizzlys Wolfsburg",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Durban's Super Giants",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "MI Cape Town",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Crystal Palace",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Tottenham Hotspur",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Bologna",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Sassuolo",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Algeria",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Burkina Faso",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Newcastle Eagles",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Caledonia Gladiators",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cheshire Phoenix",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Manchester Basketball",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NFL Redzone",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Carolina Panthers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Seattle Seahawks",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Tennessee Titans",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "New Orleans Saints",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Indianapolis Colts",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Jacksonville Jaguars",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cleveland Browns",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Pittsburgh Steelers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "New York Jets",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "New England Patriots",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Miami Dolphins",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Tampa Bay Buccaneers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cincinnati Bengals",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Arizona Cardinals",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Atalanta",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Inter Milan",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Ivory Coast",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cameroon",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "College Park Skyhawks",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Long Island Nets",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Oklahoma City Thunder",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Toronto Raptors",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Golden State Warriors",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Las Vegas Raiders",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "New York Giants",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Buffalo Bills",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Philadelphia Eagles",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Columbus Blue Jackets",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Montreal Canadiens",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Noblesville Boom",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Grand Rapids Gold",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Washington Wizards",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Women's Super Smash: Wellington Blaze",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Auckland Hearts",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Konami Cup: Day 4",
+        "Sport": "baseball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Meiji Jingu Stadium",
+        "Sport": "baseball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Toronto Maple Leafs",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Pittsburgh Penguins",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Philadelphia Flyers",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Seattle Kraken",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Chicago Bears",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "San Francisco 49ers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Detroit Pistons",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Sacramento Kings",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Los Angeles Lakers",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Super Smash: Wellington Firebirds",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Auckland Aces",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Myanmar tour of Bhutan: Bhutan",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Myanmar",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Winter Cup: Final",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Men's Big Bash League: Hobart Hurricanes",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Melbourne Renegades",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "World Championships: Day Sixteen",
+        "Sport": "darts",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "SA20: Eastern Cape",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Capitals",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Angola",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Egypt",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Zimbabwe",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "South Africa",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Georgia Southern Eagles",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "App State Mountaineers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Comoros",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Mali",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Zambia",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Morocco",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "AS Roma",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Genoa",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Columbus Blue Jackets",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: New York Rangers",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Washington Capitals",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Phoenix Suns",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Milwaukee Bucks",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Charlotte Hornets",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Edmonton Oilers",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Orlando Magic",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Golden State Warriors",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Denver Nuggets",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Buffalo Sabres",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Indiana Pacers",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: New York Knicks",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Cleveland Cavaliers",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Minnesota Timberwolves",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Atlanta Hawks",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Los Angeles Rams",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Atlanta Falcons",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Los Angeles Kings",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Boston Bruins",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Nashville Predators",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Utah Mammoth",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Vancouver Canucks",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: Minnesota Wild",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NHL: San Jose Sharks",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Super Smash: Otago Volts",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "NBA: Dallas Mavericks",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Coastal Carolina Chanticleers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Louisiana Tech Bulldogs",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Brighton & Hove Albion",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Newcastle United",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Manchester United",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Tennessee Volunteers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Illinois Fighting Illini",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "USC Trojans",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "TCU Horned Frogs",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Iowa Hawkeyes",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Vanderbilt Commodores",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Arizona State Sun Devils",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Duke Blue Devils",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Michigan Wolverines",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Texas Longhorns",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Nebraska Cornhuskers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Utah Utes",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Miami Hurricanes",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Ohio State Buckeyes",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Oregon Ducks",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Texas Tech Red Raiders",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Alabama Crimson Tide",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Indiana Hoosiers",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Ole Miss Rebels",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Georgia Bulldogs",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Rice Owls",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Texas State Bobcats",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Navy Midshipmen",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cincinnati Bearcats",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Wake Forest Demon Deacons",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Mississippi State Bulldogs",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Arizona Wildcats",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "SMU Mustangs",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Illinois State Redbirds",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Montana State Bobcats",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "UFC 324: Gaethje",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Pimblett",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Al-Qadisiyah",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Damac",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Empoli",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Frosinone",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Juve Stabia",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "S\u00fcdtirol",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Lusitano de \u00c9vora",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Fafe",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Dundee",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Falkirk",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Rangers",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Motherwell",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "St Mirren",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Kilmarnock",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Aberdeen",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Dundee United",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Brigham Young Cougars",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Georgia Tech Yellow Jackets",
+        "Sport": "americanfootball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Horse Racing: America's Day At the Races",
+        "Sport": "other",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "IWR 41: Season's Beatings Fest",
+        "Sport": "other",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Czechia U20",
+        "Sport": "hockey",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Dendermonde UCI Cyclo Cross World Championships: Women's Elite",
+        "Sport": "other",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Pa\u00e7os de Ferreira",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "PROGRESS Wrestling: Chapter 188: Unboxing VIII",
+        "Sport": "other",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "In Search of Socks",
+        "Sport": "other",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Amanda Serrano",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Erika Cruz",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
+    }
+]
