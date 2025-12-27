@@ -2572,5 +2572,35 @@
         "Sport": "basketball",
         "League": "",
         "Status": "Pending"
+    },
+    {
+        "Team": "Braga",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Benfica",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Men's Big Bash League: Sydney Thunder",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Perth Scorchers",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Chapter 188 Unboxing VIII The Search For Socks",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
     }
 ]
