@@ -10,7 +10,7 @@ SETTINGS_FILE = 'settings.json'
 CURSOR_FILE = 'scripts/verification_cursor.txt'
 BATCH_SIZE = 50       
 BATCHES_PER_RUN = 5   
-SLEEP_TIME = 15       # Increased safety delay
+SLEEP_TIME = 15       
 
 def get_text(response):
     try:
@@ -23,6 +23,15 @@ def clean_json(text):
     if not text: return ""
     text = re.sub(r"^```json|^```|```$", "", text, flags=re.MULTILINE).strip()
     return text
+
+def find_working_model(client):
+    candidates = ['gemini-1.5-flash', 'gemini-1.5-flash-001', 'gemini-1.5-flash-002', 'gemini-1.5-pro']
+    for model in candidates:
+        try:
+            res = client.models.generate_content(model=model, contents="Hi")
+            if res: return model
+        except: pass
+    return 'gemini-1.5-flash'
 
 def main():
     print("--- [Phase 3] Starting Rolling Verification ---")
@@ -45,9 +54,9 @@ def main():
     if start_index >= len(db): start_index = 0
     print(f" > Cursor Position: {start_index} / {len(db)}")
 
-    # FORCE STABLE MODEL
-    model_name = "gemini-1.5-flash"
     client = genai.Client(api_key=api_key)
+    # AUTO-DISCOVER MODEL
+    model_name = find_working_model(client)
     print(f" > Using Model: {model_name}")
     
     prompt_template = settings.get("verification_prompt", "")
@@ -98,9 +107,7 @@ def main():
                                     changes = True
             except Exception as e:
                 print(f"     [!] Batch Failed: {str(e)[:100]}")
-                if "429" in str(e):
-                    print("     ⏳ Quota hit. Sleeping 60s...")
-                    time.sleep(60)
+                if "429" in str(e): time.sleep(60)
         
         current_index += len(raw_batch)
         if current_index >= len(db): current_index = 0
