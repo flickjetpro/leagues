@@ -2548,5 +2548,29 @@
         "Sport": "fighting",
         "League": "",
         "Status": "Pending"
+    },
+    {
+        "Team": "Duquesne Dukes",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cleary Cougars",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Stanford",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Cal State-Northridge",
+        "Sport": "basketball",
+        "League": "",
+        "Status": "Pending"
     }
 ]
