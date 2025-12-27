@@ -1,6 +1,6 @@
 import json
 import requests
-import google.generativeai as genai
+from google import genai # NEW IMPORT
 import time
 import re
 
@@ -23,28 +23,42 @@ PROMPT_VERIFY = config.get("verification_prompt")
 
 BACKEND_URL = "https://vercelapi-olive.vercel.app/api/sync-nodes"
 
-# --- AI HELPERS ---
+# --- AI HELPERS (UPDATED FOR NEW GOOGLE-GENAI LIBRARY) ---
 def ask_ai_fill(api_key, team, sport):
     if not api_key: return "Error"
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        # New Client Initialization
+        client = genai.Client(api_key=api_key)
+        
         prompt = PROMPT_FILL.replace("{team}", str(team)).replace("{sport}", str(sport))
-        response = model.generate_content(prompt)
+        
+        # New Generate Call
+        response = client.models.generate_content(
+            model='gemini-1.5-flash',
+            contents=prompt
+        )
         return response.text.strip()
-    except: return "Error"
+    except Exception as e:
+        # print(f"AI Error: {e}") # Uncomment for debugging
+        return "Error"
 
 def ask_ai_verify_batch(api_key, batch_data):
     if not api_key: return []
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        client = genai.Client(api_key=api_key)
+        
         prompt = PROMPT_VERIFY.replace("{batch_data}", json.dumps(batch_data))
-        response = model.generate_content(prompt)
+        
+        response = client.models.generate_content(
+            model='gemini-1.5-flash',
+            contents=prompt
+        )
         text = response.text.strip()
-        # Clean JSON
+        
+        # Clean JSON markdown if present
         if text.startswith("```"):
             text = re.sub(r"^```json|^```|```$", "", text, flags=re.MULTILINE).strip()
+            
         return json.loads(text)
     except Exception as e:
         print(f"   ⚠️ Batch Verify Error: {e}")
@@ -57,12 +71,11 @@ def main():
         with open('db.json', 'r') as f: db = json.load(f)
     except: db = []
     
-    # Create lookup map for fast checking
     existing_map = {item['Team']: item for item in db}
     changes_made = False
 
     # ======================================================
-    # PHASE 1: SYNC (Extract Backend -> DB) - NO AI HERE
+    # PHASE 1: SYNC (Extract Backend -> DB)
     # ======================================================
     print("🌍 Phase 1: Syncing from Backend...")
     try:
@@ -74,28 +87,25 @@ def main():
 
     for m in matches:
         sport = m.get('sport') or "Unknown"
-        # Check both teams
         for role in ['team_a', 'team_b']:
             t_name = m.get(role)
-            # If valid name and NOT in DB yet
             if t_name and t_name not in existing_map:
                 print(f"   🆕 Found new team: {t_name}")
                 new_entry = {
                     "Team": t_name,
                     "Sport": sport,
                     "League": "",       # BLANK intentionally
-                    "Status": "Pending" # Waiting for AI or Manual
+                    "Status": "Pending" 
                 }
                 db.append(new_entry)
                 existing_map[t_name] = new_entry
                 changes_made = True
 
     # ======================================================
-    # PHASE 2: FILL BLANKS (AI #1) - Limit 50
+    # PHASE 2: FILL BLANKS (AI #1)
     # ======================================================
     print(f"\n🤖 Phase 2: Filling Empty Leagues (Limit: {FILL_LIMIT})...")
     
-    # Get list of teams that have NO league
     unfilled_teams = [t for t in db if not t.get('League')]
     
     fill_count = 0
@@ -103,6 +113,11 @@ def main():
         if fill_count >= FILL_LIMIT:
             break
         
+        # Only process if we have a key
+        if not KEY_FILL:
+            print("   ⚠️ No Extraction Key found. Skipping Phase 2.")
+            break
+
         print(f"   ✏️ Filling: {team['Team']}")
         result = ask_ai_fill(KEY_FILL, team['Team'], team['Sport'])
         time.sleep(SLEEP_TIME)
@@ -117,18 +132,22 @@ def main():
         print("   ✅ No blank teams found (or limit reached).")
 
     # ======================================================
-    # PHASE 3: VERIFY ALL (AI #2) - Batch Check
+    # PHASE 3: VERIFY ALL (AI #2)
     # ======================================================
     if config.get("enable_verification"):
         print(f"\n🕵️ Phase 3: Verifying ALL teams ({len(db)} teams)...")
         
-        # Filter: We only verify teams that HAVE a league (filled by AI or Manual)
         teams_to_check = [t for t in db if t.get('League')]
         
+        # Batch Loop
         for i in range(0, len(teams_to_check), BATCH_SIZE):
+            if not KEY_VERIFY:
+                 print("   ⚠️ No Verification Key found. Skipping Phase 3.")
+                 break
+
             batch = teams_to_check[i : i + BATCH_SIZE]
             
-            # Prepare minimal payload
+            # Minimal payload
             mini_batch = [{"Team": t["Team"], "League": t["League"], "Sport": t["Sport"]} for t in batch]
             
             print(f"   Scanning batch {i}-{i+len(batch)}...")
@@ -140,14 +159,12 @@ def main():
                     t_name = fix.get("Team")
                     correct_league = fix.get("League")
                     
-                    # Update local DB
                     if t_name in existing_map:
                         rec = existing_map[t_name]
-                        # Only update if actually different
                         if rec['League'] != correct_league:
                             print(f"   ⚠️ Correction: {t_name} [{rec['League']} -> {correct_league}]")
                             rec['League'] = correct_league
-                            rec['Status'] = "Modified" # Flag for Admin
+                            rec['Status'] = "Modified"
                             changes_made = True
 
     # 4. SAVE
