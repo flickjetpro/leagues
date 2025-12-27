@@ -2614,5 +2614,17 @@
         "Sport": "fighting",
         "League": "",
         "Status": "Pending"
+    },
+    {
+        "Team": "World Championships: Day Seventeen",
+        "Sport": "darts",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "Multiview: Matchweek 18 \ud83d\udd25\ud83d\udd25\ud83d\udd25",
+        "Sport": "soccer",
+        "League": "",
+        "Status": "Pending"
     }
 ]
