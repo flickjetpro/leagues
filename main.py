@@ -4,6 +4,10 @@ import google.generativeai as genai
 import time
 import os
 
+# --- CONFIGURATION ---
+BATCH_LIMIT = 50  # Max AI calls per hour (Keeps us safe from limits)
+SLEEP_TIME = 4    # Seconds between calls (Keeps us under 15 requests/min)
+
 # --- LOAD SETTINGS ---
 try:
     with open('settings.json', 'r') as f:
@@ -12,48 +16,39 @@ except:
     print("❌ Settings file not found.")
     exit(1)
 
-# KEYS
 KEY_EXTRACT = config.get("extraction_key")
 KEY_VERIFY = config.get("verification_key")
-
-# PROMPTS
 PROMPT_EXTRACT = config.get("extraction_prompt")
 PROMPT_VERIFY = config.get("verification_prompt")
 ENABLE_VERIFY = config.get("enable_verification")
 
-# --- BACKEND URL ---
 BACKEND_URL = "https://vercelapi-olive.vercel.app/api/sync-nodes"
 
-# --- AI HELPER FUNCTION ---
+# --- AI HELPER ---
 def ask_gemini(api_key, prompt_text):
-    if not api_key:
-        return "Missing Key"
+    if not api_key: return "Missing Key"
     try:
-        # Configure the specific key for this request
         genai.configure(api_key=api_key)
-        # UPDATED MODEL: gemini-pro is old/deprecated. Using gemini-1.5-flash (Faster & Free)
-        model = genai.GenerativeModel('gemini-1.5-flash') 
+        model = genai.GenerativeModel('gemini-1.5-flash')
         response = model.generate_content(prompt_text)
-        time.sleep(2) # Increased delay slightly to avoid rate limits
         return response.text.strip()
     except Exception as e:
-        print(f"⚠️ AI Error: {e}")
+        print(f"   ⚠️ AI Error: {e}")
         return "Error"
 
 # --- MAIN PROCESS ---
 def main():
-    # 1. Load Local Database
+    # 1. Load Database
     try:
         with open('db.json', 'r') as f:
             db = json.load(f)
     except:
         db = []
 
-    # Map existing teams for quick lookup
-    existing_teams = {item['Team']: item for item in db}
+    existing_teams_map = {item['Team']: item for item in db}
     
-    # 2. Fetch External Data
-    print(f"🌍 Fetching data from: {BACKEND_URL}")
+    # 2. Fetch Backend Data
+    print(f"🌍 Fetching data from Backend...")
     try:
         resp = requests.get(BACKEND_URL)
         data = resp.json()
@@ -62,92 +57,98 @@ def main():
         print(f"❌ Error fetching backend: {e}")
         return
 
+    # 3. Identify New Teams
+    new_teams_queue = []
+    for match in matches:
+        sport = match.get('sport') or "Unknown"
+        # Check Team A
+        ta = match.get('team_a')
+        if ta and ta not in existing_teams_map:
+            # Avoid duplicates in the queue
+            if not any(x['name'] == ta for x in new_teams_queue):
+                new_teams_queue.append({'name': ta, 'sport': sport})
+        
+        # Check Team B
+        tb = match.get('team_b')
+        if tb and tb not in existing_teams_map:
+            if not any(x['name'] == tb for x in new_teams_queue):
+                new_teams_queue.append({'name': tb, 'sport': sport})
+
+    print(f"📊 Status: {len(db)} teams in DB. {len(new_teams_queue)} new teams waiting.")
+    
+    ai_calls_made = 0
     changes_made = False
 
-    # 3. Process Teams (Extract from Team A and Team B)
-    teams_to_process = []
-    
-    for match in matches:
-        # SAFE GUARD: Ensure values are strings, fallback to "Unknown" if None
-        sport = match.get('sport') or "Unknown Sport"
-        team_a = match.get('team_a') or "Unknown Team"
-        team_b = match.get('team_b') or "Unknown Team"
+    # --- PHASE 1: EXTRACTION (Priority) ---
+    print(f"🚀 Starting Batch Processing (Limit: {BATCH_LIMIT} calls)...")
 
-        # Skip if name is completely invalid
-        if team_a != "Unknown Team":
-            teams_to_process.append({'name': team_a, 'sport': sport})
+    for item in new_teams_queue:
+        if ai_calls_made >= BATCH_LIMIT:
+            break # Stop if budget used
         
-        if team_b != "Unknown Team":
-            teams_to_process.append({'name': team_b, 'sport': sport})
-
-    # 4. AI EXTRACTION LOOP (Using Extraction Key)
-    for t in teams_to_process:
-        name = t['name']
-        sport = t['sport']
+        name = item['name']
+        sport = item['sport']
         
-        if name not in existing_teams:
-            print(f"🆕 New Team found: {name} ({sport})")
-            
-            # PREVENT CRASH: Ensure prompt replacement handles strings
-            if not PROMPT_EXTRACT:
-                print("❌ Extraction Prompt missing in settings.json")
-                continue
+        print(f"[{ai_calls_made+1}/{BATCH_LIMIT}] 🆕 Extracting: {name} ({sport})")
+        
+        prompt = PROMPT_EXTRACT.replace("{team}", str(name)).replace("{sport}", str(sport))
+        league_guess = ask_gemini(KEY_EXTRACT, prompt)
+        time.sleep(SLEEP_TIME) # Rate limit safety
+        ai_calls_made += 1
 
-            prompt = PROMPT_EXTRACT.replace("{team}", str(name)).replace("{sport}", str(sport))
-            
-            # Call AI #1
-            league_guess = ask_gemini(KEY_EXTRACT, prompt)
-            
-            # Don't save if AI errored out completely
-            if league_guess == "Error":
-                continue
-
+        if league_guess != "Error":
             new_entry = {
                 "Team": name,
                 "League": league_guess,
                 "Sport": sport,
-                "Verified": False
+                "Verified": False, # Needs verification later
+                "Status": "New"
             }
-            
             db.append(new_entry)
-            existing_teams[name] = new_entry 
+            existing_teams_map[name] = new_entry
             changes_made = True
 
-    # 5. AI VERIFICATION LOOP (Using Verification Key)
-    if ENABLE_VERIFY:
-        for entry in db:
-            if not entry.get("Verified", False) and KEY_VERIFY:
-                print(f"🕵️ Verifying: {entry['Team']} -> {entry['League']}")
-                
-                # SAFE GUARD for Prompt Replacement
-                sport = entry.get('Sport') or "Sports"
-                team_name = entry.get('Team') or "Unknown"
-                current_league = entry.get('League') or "Unknown"
+    # --- PHASE 2: VERIFICATION (Fill remaining budget) ---
+    # We filter for teams that are NOT verified yet
+    unverified_teams = [t for t in db if t.get("Verified") is False]
 
-                prompt = PROMPT_VERIFY.replace("{team}", str(team_name))\
-                                      .replace("{league}", str(current_league))\
-                                      .replace("{sport}", str(sport))
-                
-                # Call AI #2
-                decision = ask_gemini(KEY_VERIFY, prompt)
-                
-                if "CORRECT" in decision.upper():
-                    print("   ✅ Confirmed Correct.")
-                    entry["Verified"] = True
-                    changes_made = True
-                elif decision != "Error" and decision != "Missing Key":
-                    print(f"   ⚠️ Correction: {entry['League']} -> {decision}")
-                    entry["League"] = decision
-                    entry["Verified"] = True
-                    changes_made = True
+    if ENABLE_VERIFY and ai_calls_made < BATCH_LIMIT:
+        for entry in unverified_teams:
+            if ai_calls_made >= BATCH_LIMIT:
+                break
+            
+            print(f"[{ai_calls_made+1}/{BATCH_LIMIT}] 🕵️ Verifying: {entry['Team']}")
+            
+            prompt = PROMPT_VERIFY.replace("{team}", str(entry['Team']))\
+                                  .replace("{league}", str(entry['League']))\
+                                  .replace("{sport}", str(entry.get('Sport', 'Unknown')))
+            
+            decision = ask_gemini(KEY_VERIFY, prompt)
+            time.sleep(SLEEP_TIME)
+            ai_calls_made += 1
 
-    # 6. Save Data
+            if "CORRECT" in decision.upper():
+                print("   ✅ Verified Correct.")
+                entry["Verified"] = True
+                entry["Status"] = "Verified"
+                changes_made = True
+            elif decision != "Error" and len(decision) < 50:
+                # If AI returned a league name (not an error message)
+                print(f"   ⚠️ Modified: {entry['League']} -> {decision}")
+                entry["League"] = decision
+                entry["Verified"] = True
+                entry["Status"] = "Modified" # Special flag for admin panel
+                changes_made = True
+
+    # 4. Save
     if changes_made:
         with open('db.json', 'w') as f:
             json.dump(db, f, indent=4)
-        print("💾 Database updated successfully.")
+        print("💾 Database updated.")
     else:
-        print("💤 No new teams or verifications needed.")
+        print("💤 No changes made this run.")
+        
+    print(f"🏁 Run Complete. Used {ai_calls_made} AI credits.")
 
 if __name__ == "__main__":
     main()
