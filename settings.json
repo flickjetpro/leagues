@@ -1,6 +1,4 @@
 {
-    "extraction_key": "AIzaSyDAPgoVPkUcrEMGbg8Owwn-abSwM70zRCE",
-    "verification_key": "AIzaSyCW4-gLoy9eOhjcVQTI7CJqVH8s2E09O1c",
     "extraction_prompt": "I have a sports team named '{team}' playing '{sport}'. Return ONLY the specific league name (e.g. 'NBA', 'Premier League'). No extra words. If unsure, return 'Unknown'.",
     "verification_prompt": "You are a data auditor. I will give you a JSON list of sports teams. Check if their Leagues are correct for their Sport. \n\nRules:\n1. Return a JSON list of ONLY the teams that are WRONG. \n2. The format must be: [{\"Team\": \"TeamName\", \"League\": \"CorrectedLeagueName\"}].\n3. If a team is correct, DO NOT include it in the output.\n4. If the input list is all correct, return [].\n\nInput List:\n{batch_data}",
     "enable_verification": true
