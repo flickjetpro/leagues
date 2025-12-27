@@ -1,7 +1,7 @@
 {
     "extraction_key": "AIzaSyBQTXejr6avjxj2mGpsZA2sZaFAe1PVNq4",
     "verification_key": "AIzaSyDiWLpIWGSW4avlQjaYcnSr78nyLXUBIRA",
-    "extraction_prompt": "I have a sports team named '{team}' playing the sport '{sport}'. Which specific league do they play in? Return ONLY the league name (e.g., 'NBA', 'Premier League', 'IPL'). If unsure, say 'Unknown'.",
-    "verification_prompt": "I have a team named '{team}' and an AI predicted they play in '{league}'. The sport is '{sport}'. Is this correct? Reply 'CORRECT' if yes. If no, reply with the ACTUAL league name only.",
+    "extraction_prompt": "I have a sports team named '{team}' playing '{sport}'. Return ONLY the specific league name (e.g. 'NBA', 'Premier League'). No extra words.",
+    "verification_prompt": "Team: '{team}'. Predicted League: '{league}'. Sport: '{sport}'. Is this correct? Reply ONLY with 'CORRECT' if yes. If no, reply ONLY with the correct league name.",
     "enable_verification": true
 }
