@@ -1,15 +1,15 @@
-name: AI League Manager
+name: AI League Manager (Modular)
 
 on:
   schedule:
-    - cron: '0 * * * *' # Every hour
-  workflow_dispatch: # Manual Button
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  ai_update:
+  modular_update:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -23,16 +23,32 @@ jobs:
       - name: Install Dependencies
         run: pip install -r scripts/requirements.txt
 
-      - name: Run AI Script
-        env:
-          # This injects the GitHub Secrets into Python
-          GEMINI_KEY_EXTRACTION: ${{ secrets.GEMINI_KEY_EXTRACTION }}
-          GEMINI_KEY_VERIFICATION: ${{ secrets.GEMINI_KEY_VERIFICATION }}
-        run: python scripts/ai_manager.py
+      # STEP 1: FETCH (Network Only)
+      - name: 1. Fetch Teams from Backend
+        run: python scripts/fetch_teams.py
 
-      - name: Commit Changes
+      # STEP 2: FILL (AI Only)
+      - name: 2. AI Fill Empty Leagues
+        env:
+          GEMINI_KEY_EXTRACTION: ${{ secrets.GEMINI_KEY_EXTRACTION }}
+        run: python scripts/fill_leagues.py
+
+      # STEP 3: VERIFY (AI Only)
+      - name: 3. AI Verify Data
+        env:
+          GEMINI_KEY_VERIFICATION: ${{ secrets.GEMINI_KEY_VERIFICATION }}
+        run: python scripts/verify_leagues.py
+
+      # STEP 4: COMMIT
+      - name: Commit & Push
         run: |
           git config --global user.name 'AI Admin Bot'
           git config --global user.email 'bot@noreply.github.com'
           git add db.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "AI Update [skip ci]" && git push)
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "AI Update [skip ci]"
+            git push
+          fi
