@@ -2626,5 +2626,11 @@
         "Sport": "soccer",
         "League": "",
         "Status": "Pending"
+    },
+    {
+        "Team": "AEW: World's End",
+        "Sport": "fighting",
+        "League": "",
+        "Status": "Pending"
     }
 ]
