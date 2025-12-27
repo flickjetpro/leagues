@@ -31,7 +31,7 @@ def main():
     prompt_template = settings.get("verification_prompt", "")
     client = genai.Client(api_key=api_key)
     
-    # 2. Filter Targets (Only teams WITH leagues)
+    # 2. Filter Targets
     targets = [t for t in db if t.get('League')]
     print(f" > Verifying {len(targets)} teams in batches of {BATCH_SIZE}...")
     
@@ -40,8 +40,6 @@ def main():
     # 3. Batch Loop
     for i in range(0, len(targets), BATCH_SIZE):
         batch = targets[i : i + BATCH_SIZE]
-        
-        # Minimized JSON for AI
         mini_payload = [{"Team": x["Team"], "League": x["League"], "Sport": x["Sport"]} for x in batch]
         
         print(f"   > Batch {i}-{i+len(batch)}...")
@@ -49,12 +47,12 @@ def main():
         try:
             prompt = prompt_template.replace("{batch_data}", json.dumps(mini_payload))
             
+            # UPDATED MODEL NAME: 'gemini-1.5-flash-001'
             response = client.models.generate_content(
-                model='gemini-1.5-flash',
+                model='gemini-1.5-flash-001',
                 contents=prompt
             )
             
-            # Clean JSON
             text = response.text.strip()
             if text.startswith("```"):
                 text = re.sub(r"^```json|^```|```$", "", text, flags=re.MULTILINE).strip()
@@ -62,8 +60,7 @@ def main():
             corrections = json.loads(text)
             
             if corrections:
-                # Apply corrections
-                team_map = {t['Team']: t for t in db} # Global Lookup
+                team_map = {t['Team']: t for t in db} 
                 for fix in corrections:
                     t_name = fix.get("Team")
                     correct_league = fix.get("League")
