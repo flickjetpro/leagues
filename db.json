@@ -2632,5 +2632,17 @@
         "Sport": "fighting",
         "League": "",
         "Status": "Pending"
+    },
+    {
+        "Team": "IL T20: TBA",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
+    },
+    {
+        "Team": "TBA",
+        "Sport": "cricket",
+        "League": "",
+        "Status": "Pending"
     }
 ]
